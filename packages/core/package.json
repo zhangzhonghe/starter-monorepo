@@ -1,0 +1,49 @@
+{
+  "name": "@hopejs/mind-map-core",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.12.0",
+  "description": "",
+  "author": "张中合 <958414905@qq.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/zhangzhonghe",
+  "homepage": "https://github.com/zhangzhonghe/pkg-name#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangzhonghe/pkg-name.git"
+  },
+  "bugs": "https://github.com/zhangzhonghe/pkg-name/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  }
+}

@@ -4,47 +4,25 @@
   "version": "0.0.0",
   "packageManager": "pnpm@7.12.0",
   "description": "",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "author": "张中合 <958414905@qq.com>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/antfu/pkg-name#readme",
+  "funding": "https://github.com/sponsors/zhangzhonghe",
+  "homepage": "https://github.com/zhangzhonghe/pkg-name#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/pkg-name.git"
+    "url": "git+https://github.com/zhangzhonghe/pkg-name.git"
   },
-  "bugs": "https://github.com/antfu/pkg-name/issues",
+  "bugs": "https://github.com/zhangzhonghe/pkg-name/issues",
   "keywords": [],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
-    "lint": "eslint .",
+    "build": "pnpm -r --filter=./packages/** run build",
+    "dev": "pnpm -r --filter=./packages/** run dev",
+    "lint": "pnpm -r --filter=./packages/** run lint",
     "prepublishOnly": "nr build",
-    "release": "bumpp && npm publish",
-    "start": "esno src/index.ts",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "release": "pnpm -r --filter=./packages/** run release",
+    "start": "pnpm -r --filter=./packages/** run start",
+    "test": "pnpm -r --filter=./packages/** run test",
+    "typecheck": "pnpm -r --filter=./packages/** run typecheck"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
